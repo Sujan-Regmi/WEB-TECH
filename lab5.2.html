@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      background: #fff;
+      padding: 10px;
+    }
+
+    fieldset {
+      border: 1px solid #999;
+      margin-bottom: 6px;
+      padding: 8px 12px;
+    }
+
+    legend {
+      font-size: 13px;
+      padding: 0 4px;
+    }
+
+    .row {
+      margin-bottom: 10px;
+    }
+
+    label {
+      font-size: 13px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="number"] {
+      font-size: 13px;
+      padding: 2px 4px;
+      border: 1px solid #aaa;
+    }
+
+    select {
+      font-size: 13px;
+      padding: 2px 4px;
+      border: 1px solid #aaa;
+    }
+
+    .outside {
+      margin-bottom: 8px;
+      font-size: 13px;
+    }
+
+    textarea {
+      display: block;
+      width: 210px;
+      height: 200px;
+      font-size: 13px;
+      border: 1px solid #aaa;
+      resize: vertical;
+      padding: 4px;
+    }
+
+    .msg-label {
+      font-size: 13px;
+      margin-top: 4px;
+    }
+
+    .btn-row button {
+      font-size: 13px;
+      padding: 3px 10px;
+      margin-right: 4px;
+      border: 2px outset #aaa;
+      background: #d4d4d4;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<fieldset>
+  <legend>Registration</legend>
+
+  <fieldset>
+    <legend>Personal Info</legend>
+
+    <div class="row">
+      <label>Firstname: <input type="text" placeholder="Firstname" size="15" /></label>
+      &nbsp;
+      <label>Lastname: <input type="text" placeholder="Lastname" size="15" /></label>
+      &nbsp;
+      <label>Age: <input type="number" size="5" style="width:50px;" /></label>
+    </div>
+
+    <div class="row">
+      <label>Email: <input type="email" size="15" /></label>
+      &nbsp;
+      <label>Phone:
+        <select>
+          <option>+977</option>
+          <option>+1</option>
+          <option>+44</option>
+        </select>
+        <input type="text" size="15" />
+      </label>
+      &nbsp;
+      <label>Address:
+        <select>
+          <option>KTM</option>
+          <option>PKR</option>
+          <option>BRT</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="row">
+      <label>Gender:
+        <input type="radio" name="gender" value="male" checked /> Male
+        <input type="radio" name="gender" value="female" /> Female
+        <input type="radio" name="gender" value="other" /> Other
+      </label>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Credential</legend>
+
+    <div class="row">
+      <label>Username: <input type="text" size="18" /></label>
+    </div>
+    <div class="row">
+      <label>Password: <input type="password" size="18" /></label>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Interest</legend>
+
+    <div class="row">
+      <label>Hobby:
+        <input type="checkbox" /> cricket
+        <input type="checkbox" /> Music
+        <input type="checkbox" /> Football
+      </label>
+    </div>
+
+    <div class="row">
+      <label>Faculty:
+        <input type="checkbox" /> IT
+        <input type="checkbox" /> bca
+        <input type="checkbox" /> engineering
+      </label>
+    </div>
+  </fieldset>
+
+</fieldset>
+
+<div class="outside">
+  <label>College: <input type="text" value="NCIT" size="18" /></label>
+</div>
+
+<div class="outside">
+  <label>Photo: <input type="file" /></label>
+</div>
+
+<div class="outside">
+  <label>Document: <input type="file" multiple /></label>
+</div>
+
+<div class="outside">
+  <textarea placeholder="Type your message here"></textarea>
+  <span class="msg-label">Message:</span>
+</div>
+
+<div class="btn-row">
+  <button type="submit">Submit</button>
+  <button type="reset">Reset</button>
+  <button type="button">ok</button>
+</div>
+
+</body>
+</html>

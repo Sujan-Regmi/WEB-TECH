@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+:target{
+    background-color: red;
+}
+:focus{
+    color:black;
+    
+}
+:required{
+    color:rebeccapurple;
+}
+:invalid{
+    color:red;
+}
+:checked{
+    width:100px;
+    height: 100px;;
+}
+    </style>
+</head>
+<body>
+    root,link,hover,visited,active,target
+    <br>
+    <a href="#jump1">Jump to 1</a>
+    <br>
+    <a href="#jump2">Jump to 2</a>
+    <p id="jump1">This is jump 1 section</p>
+    <p id="jump2">This is jump 2 section</p>
+    Name:
+    <input type="name" name="" id="" required> <br>
+    Email:
+    <input type="email" name="" id="">
+    <br>
+    Age:
+    <input type="number" name="" id="" min="20" max="30">
+    Places
+    <input type="checkbox" name="" id="">
+</body>
+</html>

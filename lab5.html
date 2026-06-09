@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>College Admission Form</title>
+  <style>
+    * {
+         box-sizing: border-box; margin: 0; padding: 0; 
+        }
+
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      min-height: 100vh;
+      background: url('https://www.collegenp.com/uploads/2025/02/nepal-college-of-information-technology-ncit-building.jpg') center/cover no-repeat fixed;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 40px 60px;
+      gap: 40px;
+    }
+
+
+    .login-box {
+      background-color: #00e676;
+      padding: 30px 40px 40px;
+      width: 340px;
+      flex-shrink: 0;
+      align-self: center;
+    }
+
+    .login-box h2 {
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 24px;
+    }
+
+    .login-box .field {
+      display: flex;
+      align-items: center;
+      margin-bottom: 18px;
+      gap: 8px;
+    }
+
+    .login-box label {
+      white-space: nowrap;
+      width: 90px;
+      text-align: right;
+    }
+
+    .login-box input[type="text"],
+    .login-box input[type="password"] {
+      flex: 1;
+      padding: 4px 6px;
+      border: 1px solid #ccc;
+      background: #ffb3ba;
+      font-size: 13px;
+    }
+
+    .login-box input[type="password"] {
+      background: #fff;
+    }
+
+    .login-box .forgot {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .login-box .forgot a {
+      color: #1a0dab;
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    .login-box .forgot a:hover { text-decoration: underline; }
+
+    
+    .admission-box {
+      background-color: #00e676;
+      padding: 24px 36px 30px;
+      width: 460px;
+      flex-shrink: 0;
+      align-self: flex-start;
+      margin-top: 20px;
+    }
+
+    .admission-box h2 {
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 18px;
+    }
+
+    .form-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      gap: 8px;
+    }
+
+    .form-row label {
+      width: 110px;
+      text-align: right;
+      flex-shrink: 0;
+      font-size: 13px;
+    }
+
+    .form-row input[type="text"],
+    .form-row input[type="email"],
+    .form-row input[type="password"],
+    .form-row input[type="date"],
+    .form-row input[type="tel"],
+    .form-row select,
+    .form-row textarea {
+      flex: 1;
+      padding: 4px 6px;
+      border: 1px solid #ccc;
+      font-size: 13px;
+      background: #fff;
+    }
+
+    .form-row input::placeholder,
+    .form-row textarea::placeholder {
+      color: #aaa;
+    }
+
+    .form-row textarea {
+      height: 60px;
+      resize: vertical;
+    }
+
+
+    .state-input {
+      flex: 1;
+      height: 22px;
+      background: #b9f5d0;
+      border: 1px solid #ccc;
+    }
+
+    .form-row .options {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      font-size: 13px;
+    }
+
+    .form-row .options label {
+      width: auto;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      gap: 3px;
+    }
+
+   
+    .form-row input[type="file"] {
+      flex: 1;
+      font-size: 12px;
+      padding: 2px;
+    }
+
+    /* Buttons row */
+    .btn-row {
+      display: flex;
+      gap: 8px;
+      margin-left: 118px;
+      margin-top: 14px;
+    }
+
+    .btn-row button {
+      padding: 4px 16px;
+      font-size: 13px;
+      border: 1px solid #555;
+      background: #e0e0e0;
+      cursor: pointer;
+    }
+
+    .btn-row button:hover { background: #ccc; }
+  </style>
+</head>
+<body>
+
+  
+  <div class="login-box">
+    <h2>Login</h2>
+    <div class="field">
+      <label>User name:</label>
+      <input type="text" value="Simanta" />
+    </div>
+    <div class="field">
+      <label>Password:</label>
+      <input type="password" placeholder="Eg:12345678" />
+    </div>
+    <div class="forgot">
+      <a href="#">forgot password?</a>
+    </div>
+  </div>
+
+  
+  <div class="admission-box">
+    <h2>Admission form</h2>
+
+    <div class="form-row">
+      <label>First Name:</label>
+      <input type="text" value="Simanta" />
+    </div>
+
+    <div class="form-row">
+      <label>Last Name:</label>
+      <input type="text" value="Kasaju" />
+    </div>
+
+    <div class="form-row">
+      <label>Email:</label>
+      <input type="email" />
+    </div>
+
+    <div class="form-row">
+      <label>Password:</label>
+      <input type="password" placeholder="Eg:12345678" />
+    </div>
+
+    <div class="form-row">
+      <label>DOB</label>
+      <input type="date" value="1994-09-19" />
+    </div>
+
+    <div class="form-row">
+      <label>Contact No.</label>
+      <input type="tel" placeholder="Eg:977-0123456789" />
+    </div>
+
+    <div class="form-row">
+      <label>State</label>
+      <div class="state-input"></div>
+    </div>
+
+    <div class="form-row">
+      <label>Photo</label>
+      <input type="file" />
+    </div>
+
+    <div class="form-row">
+      <label>Gender</label>
+      <div class="options">
+        <label><input type="radio" name="gender" value="male" /> Male</label>
+        <label><input type="radio" name="gender" value="female" /> Female</label>
+        <label><input type="radio" name="gender" value="others" /> Others</label>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <label>Faculty</label>
+      <div class="options">
+        <label><input type="radio" name="faculty" value="BCA" /> BCA</label>
+        <label><input type="radio" name="faculty" value="BBS" /> BBS</label>
+        <label><input type="radio" name="faculty" value="+2" checked /> +2</label>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <label>Hobbies</label>
+      <div class="options">
+        <label><input type="checkbox" /> Music</label>
+        <label><input type="checkbox" /> Travel</label>
+        <label><input type="checkbox" /> Reading books</label>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <label>Nationality</label>
+      <select style="width:90px; flex:none;">
+        <option>Nepali</option>
+        <option>Indian</option>
+        <option>Other</option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label>Message</label>
+      <textarea></textarea>
+    </div>
+
+    <div class="form-row">
+      <label>Terms &amp; Condition</label>
+      <div class="options">
+        <label><input type="radio" name="terms" value="agree" /> I agree</label>
+        <label><input type="radio" name="terms" value="disagree" /> I Disagree</label>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <button type="submit">SignUp</button>
+      <button type="reset">Clear</button>
+    </div>
+  </div>
+
+</body>
+</html>
