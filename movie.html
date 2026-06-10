@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        .main{
+            display: flex;
+            aspect-ratio: 5/2;
+            gap: 5px;
+        }
+
+        .image{
+        
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            flex: 1 1 0;
+            transition: flex 0.5s ease-in-out;
+
+ }
+        .image:hover{
+            flex: 2;
+        }
+
+        .image1{
+            background-image: url(https://m.media-amazon.com/images/S/pv-target-images/f19c7e550a4c984dd0fed38014bc6baefc59c09e4c342b6d390851a4ea70da85.png);
+        }
+
+        .image2{
+            background-image: url(https://images.media.io/ai-movie-poster-generator/movie-poster5.png);
+        }
+
+        .image3{
+            background-image: url(https://petapixel.com/assets/uploads/2023/11/Disney-Pixar-Posters-800x420.jpg);
+        }
+
+        .image4{
+            background-image: url(https://images.media.io/ai-movie-poster-generator/movie-poster3.png);
+        }
+
+        .image5{
+            background-image: url(https://mew-1350584998.cos.ap-shanghai.myqcloud.com/ai-tools/ai-movie-poster-generator-template4.png?imageMogr2/format/webp/thumbnail/x760);
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="image image1">AI Image 1</div>
+        <div class="image image2">AI Image 2</div>
+        <div class="image image3">AI Image 3</div>
+        <div class="image image4">AI Image 4</div>
+        <div class="image image5">AI Image 5</div>
+    </div>
+</body>
+</html>

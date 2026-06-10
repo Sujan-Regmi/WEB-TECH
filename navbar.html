@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        body{
+            height: 2000px;
+        }
+        nav{
+            /* background-color: black; */
+            background-image: linear-gradient(to left, pink, rgb(255, 0, 153),rgb(255, 153, 0),purple);
+            padding: 30px 30px 30px 0px;
+            font-size: 20px;
+            position: sticky;
+             top: 0;
+
+        }
+        nav a{
+            color: aqua;
+            text-decoration: none;
+            padding: 30px;
+        }
+        
+        nav a:hover{
+            color: red;
+        }
+        input{
+            position: absolute;
+            right: 5px;
+            height: 30px;
+            width: 400px;
+        }
+        .login{
+            width: 100px;
+            border-radius: 20px;
+            background-color: aqua;
+            font-size: 20px;
+        }
+        .login:hover{
+            background-color: deeppink;
+            color:brown;
+        }
+        .signup{
+            width: 100px;
+            border-radius: 20px;
+            background-color: plum;
+            font-size: 20px;
+        }
+        .signup:hover{
+            background-color: navy;
+            color:brown;
+        }
+        .main{
+            display: inline-block;
+            position: relative;
+
+        }
+        .menu{
+            position: absolute;
+            list-style-type: none;
+            background-color: white;
+            top: 130%;
+            left: 10px;
+            margin: 0;
+            padding: 0;
+            display: none;
+        }
+        .menu li{
+            padding: 10px;
+            width: 100px;
+            text-align: center;
+        }
+        .menu li:hover{
+            background-color: gray;
+        }
+        .main:hover .menu{
+            display: block;
+        }
+        header{
+            background-image: url(https://tse4.mm.bing.net/th/id/OIP.8SLfu_oyNg5OvQDPQcb8EgHaIr?pid=Api&h=220&P=0);
+            height: 500px;
+            background-size: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <header>
+    </header>
+    <nav>
+        <a href="">HOME</a>
+        <a href="">GALLERY</a>
+        <a href="">News</a>
+        <div class="main">
+            <a href="">Contact</a>
+            <ul class="menu">
+            <li>list1</li>
+            <li>list2</li>
+            <li>list3</li>
+            <li>list 4</li>
+            <li>list 5</li>
+            </ul>
+        </div>
+        <button class="login">Login</button>
+        <button class="signup">Sign Up</button>
+        <input type="search" name="" id="" placeholder="search">
+    </nav>
+    <footer>
+        &copy;
+    </footer>
+</body>
+</html>
