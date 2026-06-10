@@ -1,6 +1,7 @@
-.external {
-    color: blue;
-    font-size: 30px;
-    font-weight: bold;
-    font-family: Arial;
+.external-box{
+    background-color:pink;
+    color:red;
+    padding:20px;
+    border:2px solid red;
+    margin:10px;
 }
