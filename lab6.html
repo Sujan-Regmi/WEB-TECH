@@ -3,9 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CSS SELECTORS</title>
+    <style>
+        *{
+            font-family: arial;
+        }
+        h1{
+            color: red;
+            font-family: arial;
+        }
+        .classStyle{
+             color: blue;
+            font-size: 24px;
+            font-style: italic;
+        }
+
+        #idStyle{
+            color: green;
+            font-size: 22px;
+            font-weight: lighter;
+            font-style: normal;
+        }
+
+        h2,p{
+            color:orchid;
+            font-family:sans-serif;
+        }
+</style>
 </head>
 <body>
-    
+    <p>This paragraph uses the grouping selector.</p>
+    <h1>This header uses the grouping selector.</h1>
+    <div class="classStyle">
+        Sujan Regmi-Class Selector..
+</div>
+<div id="idStyle">
+     Sujan Regmi - ID Selector..
+
+</div>
 </body>
 </html>
