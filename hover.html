@@ -1,34 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Hover Example</title>
 <style>
-  a:link{
-            color:red;
-        }
-        a:visited{
-            color:blue;
-        }
 
-        a:hover{
-            color: yellow;
-            font-size: 150%;
-            background-color: black;
-            font-family: monospace;
-            text-decoration: underline wavy;
-        }
+a:link{color:blue;}
+a:visited{color:purple;}
+a:hover{color:red;}
+a:active{color:green;}
 
-        a:active{
-            color:green;
-        }
-    </style>
+input:focus{background:yellow;}
+
+li:first-child{color:red;}
+li:last-child{color:green;}
+li:nth-child(2){color:blue;}
+
+</style>
 </head>
 <body>
-    <a href="#">I live in Nepal</a><br><br>
-    <a href="#">I live in Nepal</a><br><br>
-    <a href="#">I live in Nepal</a><br><br>
-    <a href="#">I live in Nepal</a><br><br>
-    <a href="#">I live in Nepal</a><br><br>
-    <a href="#">I live in Nepal</a><br><br>
+
+<a href="#">Link</a>
+
+<br><br>
+
+<input type="text" placeholder="Focus here">
+
+<ul>
+    <li>One</li>
+    <li>Two</li>
+    <li>Three</li>
+</ul>
+
 </body>
 </html>

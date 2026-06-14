@@ -1,45 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS SELECTORS</title>
-    <style>
-        *{
-            font-family: arial;
-        }
-        h1{
-            color: red;
-            font-family: arial;
-        }
-        .classStyle{
-             color: blue;
-            font-size: 24px;
-            font-style: italic;
-        }
+<style>
+table{
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
 
-        #idStyle{
-            color: green;
-            font-size: 22px;
-            font-weight: lighter;
-            font-style: normal;
-        }
+th,td{
+    border: 1px solid black;
+    padding: 10px;
+}
 
-        h2,p{
-            color:orchid;
-            font-family:sans-serif;
-        }
+tr:nth-child(even){
+    background: #f2f2f2;
+}
+
+tr:hover{
+    background: yellow;
+}
 </style>
 </head>
 <body>
-    <p>This paragraph uses the grouping selector.</p>
-    <h1>This header uses the grouping selector.</h1>
-    <div class="classStyle">
-        Sujan Regmi-Class Selector..
-</div>
-<div id="idStyle">
-     Sujan Regmi - ID Selector..
 
-</div>
+<table>
+<tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>City</th>
+</tr>
+
+<tr>
+    <td>Ram</td>
+    <td>20</td>
+    <td>Kathmandu</td>
+</tr>
+
+<tr>
+    <td>Sita</td>
+    <td>21</td>
+    <td>Lalitpur</td>
+</tr>
+
+<tr>
+    <td>Hari</td>
+    <td>22</td>
+    <td>Bhaktapur</td>
+</tr>
+
+</table>
+
 </body>
 </html>
