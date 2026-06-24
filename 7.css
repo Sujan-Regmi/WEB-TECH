@@ -1,0 +1,35 @@
+*{
+    align-content: center;
+}
+
+.div1{
+    background-image: url(https://t4.ftcdn.net/jpg/05/12/24/35/360_F_512243529_cw6Dv8hPWjrI1ycZDWXWv9KKJhnre8DN.jpg);
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    height: 50vh;
+    width: 500px;
+}
+.div2{
+    background-color:lightblue;
+}
+img{
+    height: 20vh;
+    width: 200px;
+}
+.profile-img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 16px;
+}
+.card {
+    display: flex;
+    width: 820px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+

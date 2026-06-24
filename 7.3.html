@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+        .card {
+            width: 700px;
+            background: white;
+            display: flex;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .sidebar {
+            background-color: #00796b;
+            color: white;
+            padding: 30px;
+            width: 250px;
+            text-align: center;
+        }
+        .profile-img {
+    width: 150px;
+    height: 200px;
+    background-color: #ddd;
+    margin: 0 auto 20px auto;
+    border-radius: 4px;
+    background-image: url('image.jpg');
+    background-size: cover;
+    background-position: center;
+}
+        .content {
+            padding: 30px;
+            width: 100%;
+        }
+        h2 {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+        }
+        .info-grid {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+        .social-icons {
+            display: flex;
+    gap: 15px;
+        }
+        .icon {
+            height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <div class="sidebar">
+        <div class="profile-img"></div>
+        <h3>Er. Sujan Regmi</h3>
+        <p>student</p>
+        <p>NCIT</p>
+    </div>
+    <div class="content">
+        <h2>Information</h2>
+        <div class="info-grid">
+            <div>
+                <p><strong>Email</strong><br>sujan@ncit.edu.np</p>
+            </div>
+            <div>
+                <p><strong>Phone</strong><br>9864402690</p>
+            </div>
+        </div>
+        
+        <h2>Subjects</h2>
+        <div class="info-grid">
+            <div>
+                <p><strong>Recent</strong><br>Web Technology</p>
+            </div>
+            <div>
+                <p><strong>Most viewed</strong><br>abcd.app</p>
+            </div>
+        </div>
+        <p>Connect here</p>
+        <div class="social-icons">
+            <div class="icon"><i class="facebook"></i></div>
+    <div class="icon"><i class="instagram"></i></div>
+    <div class="icon"><i class="github"></i></div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
