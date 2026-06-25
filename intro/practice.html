@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Clothing Shopping</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff;
+    }
+
+    h1.page-title {
+      text-align: center;
+      padding: 16px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #000;
+    }
+
+    .hero {
+      background-color: #00e5ff;
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 20px;
+      position: relative;
+    }
+
+    .hero h2 {
+      font-size: 28px;
+      font-weight: bold;
+      color: #4b0082;
+      text-align: center;
+      margin-bottom: 30px;
+      letter-spacing: 1px;
+    }
+
+    .content-area {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      width: 100%;
+      gap: 40px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      padding-top: 60px;
+      z-index: 2;
+    }
+
+    .nav-links a {
+      font-size: 15px;
+      font-weight: bold;
+      color: #000080;
+      text-decoration: underline;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .nav-links a:hover {
+      color: #4b0082;
+    }
+
+    .models-img {
+      position: relative;
+      width: 420px;
+      height: 380px;
+    }
+
+    .models-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .section {
+      display: none;
+      width: 100%;
+      max-width: 700px;
+      background: #fff;
+      border-radius: 8px;
+      padding: 30px;
+      margin-top: 20px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    .section h3 {
+      font-size: 20px;
+      color: #4b0082;
+      margin-bottom: 16px;
+      border-bottom: 2px solid #4b0082;
+      padding-bottom: 8px;
+    }
+
+    .section p {
+      color: #333;
+      line-height: 1.7;
+    }
+
+    
+    .reg-form label {
+      display: block;
+      font-weight: bold;
+      margin-top: 12px;
+      margin-bottom: 4px;
+      color: #333;
+    }
+
+    .reg-form input, .reg-form select {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1px solid #aaa;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .reg-form button {
+      margin-top: 16px;
+      padding: 10px 24px;
+      background: #4b0082;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+   
+    .login-form label {
+      display: block;
+      font-weight: bold;
+      margin-top: 12px;
+      margin-bottom: 4px;
+    }
+
+    .login-form input {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1px solid #aaa;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .login-form button {
+      margin-top: 16px;
+      padding: 10px 24px;
+      background: #4b0082;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    
+    .clothes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 10px;
+    }
+
+    .cloth-item {
+      background: #f0f0f0;
+      border-radius: 6px;
+      padding: 14px;
+      text-align: center;
+    }
+
+    .cloth-item span {
+      display: block;
+      font-size: 13px;
+      margin-top: 6px;
+      color: #333;
+    }
+
+    .cloth-item strong {
+      display: block;
+      color: #4b0082;
+      font-size: 14px;
+    }
+
+    .cloth-item button {
+      margin-top: 8px;
+      padding: 6px 14px;
+      background: #00bcd4;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    
+    .cart-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    .cart-table th, .cart-table td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+
+    .cart-table th {
+      background: #4b0082;
+      color: #fff;
+    }
+
+   
+    .pay-form label {
+      display: block;
+      font-weight: bold;
+      margin-top: 12px;
+      margin-bottom: 4px;
+    }
+
+    .pay-form input {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1px solid #aaa;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .pay-form button {
+      margin-top: 16px;
+      padding: 10px 24px;
+      background: #4b0082;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    
+    .profile-card {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .profile-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: #4b0082;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 32px;
+    }
+
+    .profile-info p {
+      margin-bottom: 6px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 class="page-title">Online clothing shopping</h1>
+
+  <div class="hero">
+    <h2>WELCOME TO ONLINE SHOPPING</h2>
+
+    <div class="content-area">
+      <nav class="nav-links">
+        <a onclick="showSection('registration')">REGISTRATION FORM</a>
+        <a onclick="showSection('profile')">USER PROFILE</a>
+        <a onclick="showSection('login')">USER LOGIN</a>
+        <a onclick="showSection('clothes')">Cloths</a>
+        <a onclick="showSection('cart')">Cloth CART</a>
+        <a onclick="showSection('payment')">PAYMENT</a>
+      </nav>
+
+      <div class="models-img">
+        <img src="https://i.imgur.com/placeholder.png" alt="Fashion Models"
+          onerror="this.style.display='none'">
+      </div>
+    </div>
+
+    
+    <div id="registration" class="section">
+      <h3>Registration Form</h3>
+      <div class="reg-form">
+        <label>Full Name</label>
+        <input type="text" placeholder="Enter your full name">
+        <label>Email</label>
+        <input type="email" placeholder="Enter your email">
+        <label>Password</label>
+        <input type="password" placeholder="Create a password">
+        <label>Gender</label>
+        <select>
+          <option>Select</option>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+        </select>
+        <label>Phone Number</label>
+        <input type="tel" placeholder="Enter phone number">
+        <button>Register</button>
+      </div>
+    </div>
+
+    
+    <div id="profile" class="section">
+      <h3>User Profile</h3>
+      <div class="profile-card">
+        <div class="profile-avatar">👤</div>
+        <div class="profile-info">
+          <p><strong>Name:</strong> John Doe</p>
+          <p><strong>Email:</strong> john@example.com</p>
+          <p><strong>Phone:</strong> +977-9800000000</p>
+          <p><strong>Member Since:</strong> June 2026</p>
+        </div>
+      </div>
+    </div>
+
+    
+    <div id="login" class="section">
+      <h3>User Login</h3>
+      <div class="login-form">
+        <label>Email</label>
+        <input type="email" placeholder="Enter your email">
+        <label>Password</label>
+        <input type="password" placeholder="Enter your password">
+        <button>Login</button>
+      </div>
+    </div>
+
+    
+    <div id="clothes" class="section">
+      <h3>Cloths</h3>
+      <div class="clothes-grid">
+        <div class="cloth-item">
+          <span>👗</span>
+          <strong>Women's Dress</strong>
+          <span>Rs. 1500</span>
+          <button>Add to Cart</button>
+        </div>
+        <div class="cloth-item">
+          <span>👔</span>
+          <strong>Men's Shirt</strong>
+          <span>Rs. 900</span>
+          <button>Add to Cart</button>
+        </div>
+        <div class="cloth-item">
+          <span>👖</span>
+          <strong>Jeans</strong>
+          <span>Rs. 1200</span>
+          <button>Add to Cart</button>
+        </div>
+        <div class="cloth-item">
+          <span>🧥</span>
+          <strong>Jacket</strong>
+          <span>Rs. 2500</span>
+          <button>Add to Cart</button>
+        </div>
+        <div class="cloth-item">
+          <span>👗</span>
+          <strong>Kurta</strong>
+          <span>Rs. 800</span>
+          <button>Add to Cart</button>
+        </div>
+        <div class="cloth-item">
+          <span>🧣</span>
+          <strong>Scarf</strong>
+          <span>Rs. 400</span>
+          <button>Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+   
+    <div id="cart" class="section">
+      <h3>Cloth CART</h3>
+      <table class="cart-table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Qty</th>
+            <th>Price</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Women's Dress</td>
+            <td>1</td>
+            <td>Rs. 1500</td>
+            <td>Rs. 1500</td>
+          </tr>
+          <tr>
+            <td>Men's Shirt</td>
+            <td>2</td>
+            <td>Rs. 900</td>
+            <td>Rs. 1800</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3"><strong>Grand Total</strong></td>
+            <td><strong>Rs. 3300</strong></td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
+    
+    <div id="payment" class="section">
+      <h3>Payment</h3>
+      <div class="pay-form">
+        <label>Card Holder Name</label>
+        <input type="text" placeholder="Name on card">
+        <label>Card Number</label>
+        <input type="text" placeholder="XXXX XXXX XXXX XXXX">
+        <label>Expiry Date</label>
+        <input type="text" placeholder="MM/YY">
+        <label>CVV</label>
+        <input type="text" placeholder="XXX">
+        <button>Pay Now</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  </script>
+
+</body>
+</html>

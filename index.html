@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Website</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background:#f1f1f1;
+        }
+
+        /* Header */
+        .header{
+            background:white;
+            text-align:center;
+            padding:50px;
+            margin:10px;
+        }
+
+        .header p{
+            margin-top:20px;
+        }
+
+        /* Navbar */
+        .navbar{
+            background:#333;
+            overflow:hidden;
+            margin:10px;
+        }
+
+        .navbar a{
+            color:white;
+            text-decoration:none;
+            padding:14px 20px;
+            float:left;
+        }
+
+        .navbar a.right{
+            float:right;
+        }
+
+        /* Main Layout */
+        .row{
+            display:flex;
+            margin:10px;
+            gap:10px;
+        }
+
+        .left{
+            flex:75%;
+        }
+
+        .right{
+            flex:25%;
+        }
+
+        .card{
+            background:white;
+            padding:20px;
+            margin-bottom:15px;
+        }
+
+        .fakeimg{
+            background:#aaa;
+            padding:20px;
+            height:200px;
+            margin:10px 0;
+        }
+
+        .smallimg{
+            background:#aaa;
+            height:80px;
+            padding:10px;
+            margin:10px 0;
+        }
+
+        /* Footer */
+        .footer{
+            background:#ddd;
+            text-align:center;
+            padding:30px;
+            margin:10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <h1>My Website</h1>
+        <p>Resize the browser window to see the effect.</p>
+    </div>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+        <a href="#" class="right">Link</a>
+    </div>
+
+    
+    <div class="row">
+
+        <!-- Left Side -->
+        <div class="left">
+
+            <div class="card">
+                <h2>TITLE HEADING</h2>
+                <p>Title description, Dec 7, 2017</p>
+
+                <div class="fakeimg">Image</div>
+
+                <p>Some text..</p>
+                <p>
+                    Sunt in culpa qui officia deserunt mollit anim id est
+                    laborum consectetur adipisicing elit.
+                </p>
+            </div>
+
+            <div class="card">
+                <h2>TITLE HEADING</h2>
+                <p>Title description, Sep 2, 2017</p>
+
+                <div class="fakeimg">Image</div>
+
+                <p>Some text..</p>
+                <p>
+                    Sunt in culpa qui officia deserunt mollit anim id est
+                    laborum consectetur adipisicing elit.
+                </p>
+            </div>
+
+        </div>
+
+        
+        <div class="right">
+
+            <div class="card">
+                <h2>About Me</h2>
+                <div class="smallimg">Image</div>
+                <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+            </div>
+
+            <div class="card">
+                <h2>Popular Post</h2>
+                <div class="smallimg">Image</div>
+                <div class="smallimg">Image</div>
+                <div class="smallimg">Image</div>
+            </div>
+
+            <div class="card">
+                <h2>Follow Me</h2>
+                <p>Some text..</p>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="footer">
+        <h2>Footer</h2>
+    </div>
+
+</body>
+</html>

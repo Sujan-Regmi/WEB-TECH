@@ -4,124 +4,643 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+
+        /* ── Card 1: Green Info Card ── */
+        .card {
+            display: flex;
+            width: 700px;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+            overflow: hidden;
+            margin: 20px 0;
+            font-family: Arial, sans-serif;
+        }
+        .left-panel {
+            background-color: #3a7d5c;
+            width: 220px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px 20px;
+            color: white;
+        }
+        .profile-img {
+            width: 160px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 16px;
+        }
+        .name { font-size: 16px; font-weight: bold; text-align: center; margin: 0 0 6px; }
+        .role, .college { font-size: 13px; text-align: center; margin: 2px 0; }
+        .right-panel { background: #fff; flex: 1; padding: 24px 28px; }
+        .section-title { font-size: 20px; font-weight: bold; margin: 0 0 6px; }
+        .divider { border: none; border-top: 1px solid #ccc; margin: 0 0 16px; }
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
+        .info-label { font-weight: bold; font-size: 13px; margin: 0 0 4px; }
+        .info-value { font-size: 13px; color: #333; margin: 0; }
+        .subjects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+        .subject-label { font-weight: bold; font-size: 13px; margin: 0 0 4px; }
+        .subject-value { font-size: 13px; color: #555; margin: 0; }
+        .connect-label { font-weight: bold; font-size: 14px; margin-bottom: 10px; }
+        .social-icons img { width: 36px; height: 36px; margin-right: 8px; }
+
+        /* ── Card 2: Dark Gradient Stats Card ── */
+        .card2 {
+            width: 700px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, #1a1a5e, #8b0000, #2c003e);
+            color: white;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        .card2-top { display: flex; align-items: center; padding: 24px 24px 16px; gap: 24px; }
+        .card2-avatar { width: 110px; height: 110px; border-radius: 50%; object-fit: cover; border: 3px solid rgba(255,255,255,0.3); flex-shrink: 0; }
+        .card2-info { flex: 1; }
+        .card2-name { font-size: 22px; font-weight: bold; margin: 0 0 4px; }
+        .card2-role { font-size: 16px; color: #ddd; margin: 0 0 8px; }
+        .card2-location { font-size: 14px; color: #00e5ff; margin: 0 0 12px; }
+        .card2-stats { display: flex; gap: 24px; }
+        .stat { text-align: center; }
+        .stat-label { font-size: 13px; color: #ccc; margin: 0 0 2px; }
+        .stat-value { font-size: 22px; font-weight: bold; margin: 0; }
+        .stat-divider { width: 1px; background: rgba(255,255,255,0.3); align-self: stretch; }
+        .edit-btn { align-self: flex-start; background: white; color: #1a6ed8; border: none; border-radius: 8px; padding: 8px 20px; font-size: 15px; font-weight: bold; cursor: pointer; }
+        .online-badge { background: #2e7d32; color: white; border-radius: 20px; padding: 6px 20px; font-weight: bold; font-size: 14px; display: inline-block; margin-top: 10px; }
+        .card2-divider { border: none; border-top: 1px solid rgba(255,255,255,0.2); margin: 0 24px; }
+        .card2-actions { display: flex; justify-content: space-around; padding: 16px 24px; }
+        .action-btn { background: none; border: none; color: #00e5ff; font-size: 16px; font-weight: bold; cursor: pointer; }
+        .action-divider { width: 1px; background: rgba(255,255,255,0.2); }
+
+        /* ── LOGIN: Form 1 (simple) ── */
+        .login-simple {
+            width: 700px;
+            border: 1px solid #ddd;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            margin: 20px 0;
+        }
+        .login-simple h3 { margin-bottom: 16px; }
+        .login-simple .avatar-top {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .login-simple .avatar-top img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .login-simple .avatar-icon {
+            font-size: 80px;
+            color: #555;
+        }
+        .login-simple label { font-weight: bold; font-size: 13px; display: block; margin-bottom: 4px; }
+        .login-simple input[type="text"],
+        .login-simple input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            margin-bottom: 12px;
+            box-sizing: border-box;
+        }
+        .login-simple .btn-login {
+            width: 100%;
+            padding: 12px;
+            background: #4caf50;
+            color: white;
+            border: none;
+            font-size: 15px;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-bottom: 8px;
+        }
+        .login-simple .remember { font-size: 13px; margin-bottom: 10px; }
+        .login-simple .btn-cancel {
+            width: 100%;
+            padding: 12px;
+            background: #e53935;
+            color: white;
+            border: none;
+            font-size: 15px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .login-simple .forgot { text-align: right; margin-top: 8px; font-size: 13px; }
+        .login-simple .forgot a { color: #1a6ed8; }
+
+        .login-gradient-wrap {
+            width: 700px;
+            background: linear-gradient(135deg, #3f51b5, #9c27b0);
+            padding: 40px 20px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .login-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px 36px;
+            width: 500px;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            font-family: Arial, sans-serif;
+        }
+        .login-avatar-circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 60px;
+            color: #555;
+            overflow: hidden;
+        }
+        .login-avatar-circle img { width: 100%; height: 100%; object-fit: cover; }
+        .login-fields { flex: 1; }
+        .login-fields h2 { font-size: 22px; text-align: center; margin: 0 0 20px; color: #222; }
+        .login-input-wrap {
+            display: flex;
+            align-items: center;
+            background: #f0f0f0;
+            border-radius: 30px;
+            padding: 10px 16px;
+            margin-bottom: 12px;
+            gap: 10px;
+        }
+        .login-input-wrap span { font-size: 16px; color: #666; }
+        .login-input-wrap input {
+            border: none;
+            background: transparent;
+            font-size: 14px;
+            outline: none;
+            width: 100%;
+        }
+        .btn-login2 {
+            width: 100%;
+            padding: 12px;
+            background: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 15px;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+        .login-fields .forgot2 { text-align: center; font-size: 13px; color: #888; margin-top: 10px; }
+
+        /* ── CLOTHS SECTION ── */
+        .cloths-section {
+            width: 700px;
+            background: #f5f5f5;
+            border-radius: 12px;
+            padding: 24px;
+            font-family: Arial, sans-serif;
+            margin: 20px 0;
+        }
+        .cloths-section h2 {
+            color: #c0392b;
+            text-align: center;
+            font-size: 26px;
+            margin: 0 0 6px;
+        }
+        .cloths-section .subtitle {
+            text-align: center;
+            color: #888;
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+        .cloth-category {
+            background: white;
+            border-radius: 10px;
+            padding: 16px;
+            margin-bottom: 20px;
+        }
+        .cloth-category h3 {
+            font-size: 16px;
+            font-weight: normal;
+            margin: 0 0 10px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 8px;
+        }
+        .cloth-items-row {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 14px;
+        }
+        .cloth-item-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            width: 130px;
+            text-align: center;
+            font-size: 13px;
+            color: #333;
+        }
+        .cloth-item-card .cloth-img {
+            width: 110px;
+            height: 110px;
+            object-fit: cover;
+            border-radius: 4px;
+            background: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            margin: 0 auto 6px;
+        }
+        .cloth-item-card .cloth-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        .btn-addcart {
+            background: #f0a500;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 8px 18px;
+            font-size: 14px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* ── PAYMENT SECTION ── */
+        .payment-wrap {
+            width: 700px;
+            background: #00e5ff;
+            border-radius: 12px;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .payment-card {
+            background: #f5c518;
+            border-radius: 16px;
+            padding: 30px 36px;
+            width: 380px;
+            font-family: Arial, sans-serif;
+        }
+        .payment-card h2 {
+            text-align: center;
+            font-size: 24px;
+            color: #333;
+            margin: 0 0 20px;
+        }
+        .pay-field-label {
+            text-align: center;
+            font-size: 13px;
+            color: #444;
+            margin-bottom: 4px;
+        }
+        .pay-field-label b { font-size: 14px; }
+        .payment-card input[type="text"],
+        .payment-card input[type="email"],
+        .payment-card input[type="date"] {
+            width: 100%;
+            padding: 10px 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            margin-bottom: 14px;
+            box-sizing: border-box;
+            background: white;
+        }
+        .accepted-row {
+            text-align: center;
+            margin-bottom: 12px;
+        }
+        .accepted-row p { font-size: 13px; color: #555; margin-bottom: 6px; }
+        .accepted-row .card-icons { font-size: 28px; }
+        .btn-pay {
+            width: 100%;
+            padding: 12px;
+            background: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+    </style>
     <link rel="stylesheet" href="7.css">
 </head>
 <body>
+
     <h2>Online clothing shopping</h2>
     <div class="div1">
         <a href="#Registration">REGISTRATION FORM</a><br><br>
         <a href="#Userprofile">USER PROFILE</a><br><br>
         <a href="#userlogin">USER LOGIN</a><br><br>
         <a href="#Cloths">Cloths</a><br><br>
-        <a href="clothcart">clothCART</a><br><br>
+        <a href="#clothcart">clothCART</a><br><br>
         <a href="#payment">PAYMENT</a>
     </div>
+
+    
     <h2><u>Registration Form</u></h2>
-     <div class="div2">
-    <h2><u>Registration Form</u></h2>
-    <fieldset>
-        <legend>Registration Form</legend>
-        First Name: <input type="text" name="" id=""> <br><br>
-        Last Name: <input type="text" name="" id=""><br><br>
-        Age: <input type="number" name="" id=""><br><br>
-        Email Id: <input type="email" name="" id=""><br><br>
-        Description: <textarea name="" id="" ></textarea><br><br>
-        Phone: <input type="tel" name="" id=""> <br><br>
-        Occupation: <input type="text" name="" id=""> <br><br>
-        <input type="radio" name="" id=""> I Agree Terms & Conditions <input type="radio" name="" id=""> I Disagree <br><br>
-        <input type="submit" name="" id="" value="submit">
-        <input type="reset" name="" id="" value="reset">
-    </fieldset>
-   </div>
-   <div>
-    <h2><u>Registration Form</u></h2>
-    <div class="div3">
+    <div class="div2">
+        <h2><u>Registration Form</u></h2>
         <fieldset>
             <legend>Registration Form</legend>
-            Name: 
-            <input type="text" name="firstname" id="firstname" placeholder="First Name">
-            <input type="text" name="lastname" id="lastname" placeholder="Last Name"><br><br>
-            Email: 
-            <input type="email" name="email" id="email" placeholder="name@eg.com"><br><br>
-            Gender: 
-            <input type="radio" name="gender" id="male" checked> Male
-            <input type="radio" name="gender" id="female"> Female
-            <input type="radio" name="gender" id="others"> Others<br><br>
-            Mobile(10 digits): 
-            <input type="tel" name="mobile" id="mobile" placeholder="Mobile Number" maxlength="10"><br><br>
-            Date of Birth: 
-            <input type="date" name="dob" id="dob" value="2026-05-29"><br><br>
-            Subjects: 
-            <input type="text" name="subjects" id="subjects"><br><br>
-            Hobbies: 
-            <input type="checkbox" name="hobbies" id="sports" checked> Sports
-            <input type="checkbox" name="hobbies" id="reading"> Reading
-            <input type="checkbox" name="hobbies" id="music"> Music<br><br>
-            Picture: 
-            <input type="file" name="picture" id="picture"><br><br>
-            Current Address: 
-            <textarea name="address" id="address" placeholder="Current Address"></textarea><br><br>
-            State and City: 
-            <select name="state" id="state">
-                <option value="">Select state</option>
-                <option value="state1">State 1</option>
-                <option value="state2">State 2</option>
-            </select>
-            <select name="city" id="city">
-                <option value="">Select city</option>
-                <option value="city1">City 1</option>
-                <option value="city2">City 2</option>
-            </select><br><br>
-            <input type="submit" value="Submit">
+            First Name: <input type="text"><br><br>
+            Last Name: <input type="text"><br><br>
+            Age: <input type="number"><br><br>
+            Email Id: <input type="email"><br><br>
+            Description: <textarea></textarea><br><br>
+            Phone: <input type="tel"><br><br>
+            Occupation: <input type="text"><br><br>
+            <input type="radio" name="agree"> I Agree Terms & Conditions
+            <input type="radio" name="agree"> I Disagree<br><br>
+            <input type="submit" value="submit">
+            <input type="reset" value="reset">
         </fieldset>
     </div>
-    <div class="div4" id="#Userprofile">
-        <h3>User Profile</h3>
-        <div class="profile">
-            <img src="image.jpg">
+
+    <div>
+        <h2><u>Registration Form</u></h2>
+        <div class="div3">
+            <fieldset>
+                <legend>Registration Form</legend>
+                Name:
+                <input type="text" placeholder="First Name">
+                <input type="text" placeholder="Last Name"><br><br>
+                Email: <input type="email" placeholder="name@eg.com"><br><br>
+                Gender:
+                <input type="radio" name="gender" checked> Male
+                <input type="radio" name="gender"> Female
+                <input type="radio" name="gender"> Others<br><br>
+                Mobile(10 digits): <input type="tel" placeholder="Mobile Number" maxlength="10"><br><br>
+                Date of Birth: <input type="date" value="2026-05-29"><br><br>
+                Subjects: <input type="text"><br><br>
+                Hobbies:
+                <input type="checkbox" checked> Sports
+                <input type="checkbox"> Reading
+                <input type="checkbox"> Music<br><br>
+                Picture: <input type="file"><br><br>
+                Current Address: <textarea placeholder="Current Address"></textarea><br><br>
+                State and City:
+                <select>
+                    <option value="">Select state</option>
+                    <option>State 1</option>
+                    <option>State 2</option>
+                </select>
+                <select>
+                    <option value="">Select city</option>
+                    <option>City 1</option>
+                    <option>City 2</option>
+                </select><br><br>
+                <input type="submit" value="Submit">
+            </fieldset>
         </div>
-        <div class="card">
-  <div class="left-panel">
-    <img src="profile.jpg" alt="Profile" class="profile-img" />
-    <p class="name">Er. Simanta Kasaju</p>
-    <p class="role">Professor</p>
-    <p class="college">NCIT</p>
-  </div>
-  <div class="right-panel">
-    <h2 class="section-title">Information</h2>
-    <hr class="divider" />
-    <div class="info-grid">
-      <div>
-        <p class="info-label">Email</p>
-        <p class="info-value">simantakasaju@ncit.edu.np</p>
-      </div>
-      <div>
-        <p class="info-label">Phone</p>
-        <p class="info-value">9845176177</p>
-      </div>
-    </div>
-    <h2 class="section-title">Subjects</h2>
-    <hr class="divider" />
-    <div class="subjects-grid">
-      <div>
-        <p class="subject-label">Recent</p>
-        <p class="subject-value">Web Technology</p>
-      </div>
-      <div>
-        <p class="subject-label">Most viewed</p>
-        <p class="subject-value">abcd.app</p>
-      </div>
-    </div>
-    <p class="connect-label">Connect here</p>
-    <div class="social-icons">
-      <img src="facebook.png" alt="Facebook" />
-      <img src="instagram.png" alt="Instagram" />
-      <img src="youtube.png" alt="YouTube" />
-    </div>
-  </div>
-</div>
+
+      
+        <div class="div4" id="Userprofile">
+            <h3>User Profile</h3>
+
+           
+            <div class="card">
+                <div class="left-panel">
+                    <img src="image.jpg" alt="Profile" class="profile-img">
+                    <p class="name">Sujan Regmi</p>
+                    <p class="role">Student</p>
+                    <p class="college">NCIT</p>
+                </div>
+                <div class="right-panel">
+                    <h2 class="section-title">Information</h2>
+                    <hr class="divider">
+                    <div class="info-grid">
+                        <div>
+                            <p class="info-label">Email</p>
+                            <p class="info-value">sujan@ncit.edu.np</p>
+                        </div>
+                        <div>
+                            <p class="info-label">Phone</p>
+                            <p class="info-value">9864402690</p>
+                        </div>
+                    </div>
+                    <h2 class="section-title">Subjects</h2>
+                    <hr class="divider">
+                    <div class="subjects-grid">
+                        <div>
+                            <p class="subject-label">Recent</p>
+                            <p class="subject-value">Web Technology</p>
+                        </div>
+                        <div>
+                            <p class="subject-label">Most viewed</p>
+                            <p class="subject-value">abcd.app</p>
+                        </div>
+                    </div>
+                    <p class="connect-label">Connect here</p>
+                    <div class="social-icons">
+                        <img src="facebook.png" alt="Facebook">
+                        <img src="instagram.png" alt="Instagram">
+                        <img src="youtube.png" alt="YouTube">
+                    </div>
+                </div>
+            </div>
+
+        
+            <div class="card2">
+                <div class="card2-top">
+                    <img src="imag1.jpg" alt="Profile" class="card2-avatar">
+                    <div class="card2-info">
+                        <p class="card2-name">Sujan Regmi</p>
+                        <p class="card2-role">Student</p>
+                        <p class="card2-location">NCIT, Balkumari Nepal</p>
+                        <hr style="border-color: rgba(255,255,255,0.2); margin-bottom: 12px;">
+                        <div class="card2-stats">
+                            <div class="stat">
+                                <p class="stat-label">Projects</p>
+                                <p class="stat-value">2</p>
+                            </div>
+                            <div class="stat-divider"></div>
+                            <div class="stat">
+                                <p class="stat-label">Following</p>
+                                <p class="stat-value">200+</p>
+                            </div>
+                            <div class="stat-divider"></div>
+                            <div class="stat">
+                                <p class="stat-label">Followers</p>
+                                <p class="stat-value">2k+</p>
+                            </div>
+                        </div>
+                        <span class="online-badge">Online</span>
+                    </div>
+                    <button class="edit-btn">Edit</button>
+                </div>
+                <hr class="card2-divider">
+                <div class="card2-actions">
+                    <button class="action-btn">Follow</button>
+                    <div class="action-divider"></div>
+                    <button class="action-btn">Message</button>
+                    <div class="action-divider"></div>
+                    <button class="action-btn">Share</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="userlogin">
+            <h3>User Login</h3>
+
+
+            <div class="login-simple">
+                <div class="avatar-top">
+                    <span class="avatar-icon">👤</span>
+                </div>
+                <label>Username</label>
+                <input type="text" placeholder="Enter Username">
+                <label>Password</label>
+                <input type="password" placeholder="Enter Password">
+                <button class="btn-login">Login</button>
+                <p class="remember"><input type="checkbox" checked> Remember me</p>
+                <button class="btn-cancel">Cancel</button>
+                <p class="forgot"><a href="#">Forgot password?</a></p>
+            </div>
+
+            
+            <div class="login-gradient-wrap">
+                <div class="login-card">
+                    <div class="login-avatar-circle">👤</div>
+                    <div class="login-fields">
+                        <h2>User Login</h2>
+                        <div class="login-input-wrap">
+                            <span>✉</span>
+                            <input type="email" placeholder="Email Id">
+                        </div>
+                        <div class="login-input-wrap">
+                            <span>🔒</span>
+                            <input type="password" placeholder="Password">
+                        </div>
+                        <button class="btn-login2">Login</button>
+                        <p class="forgot2">Forgot Username / Password?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       
+        <div id="Cloths">
+            <div class="cloths-section">
+                <h2>Clothing Store</h2>
+                <p class="subtitle">Select your items and add them to your cart</p>
+                <div class="cloth-category">
+                    <h3>For Girls</h3>
+                    <div class="cloth-items-row">
+                        <div class="cloth-item-card">
+                            <div class="cloth-img">🥻</div>
+                            Sari
+                        </div>
+                        <div class="cloth-item-card">
+                            <div class="cloth-img">👘</div>
+                            Kurta
+                        </div>
+                        <div class="cloth-item-card">
+                            <div class="cloth-img">👗</div>
+                            Skirt
+                        </div>
+                        <div class="cloth-item-card">
+                            <div class="cloth-img">👗</div>
+                            One Piece
+                        </div>
+                    </div>
+                    <button class="btn-addcart">Add to Cart 🛒</button>
+                </div>
+                <div class="cloth-category">
+                    <h3>For Boys</h3>
+                    <div class="cloth-items-row">
+                        <div class="cloth-item-card">
+                            <div class="cloth-img">👔</div>
+                            Shirt
+                        </div>
+                        <div class="cloth-item-card">
+                            <div class="cloth-img">👖</div>
+                            Pants
+                        </div>
+                        <div class="cloth-item-card">
+                            <div class="cloth-img">👕</div>
+                            T-Shirt
+                        </div>
+                        <div class="cloth-item-card">
+                            <div class="cloth-img">🧥</div>
+                            Coat
+                        </div>
+                    </div>
+                    <button class="btn-addcart">Add to Cart 🛒</button>
+                </div>
+
+      
+                <div class="cloth-category">
+                    <h3>For Kids</h3>
+                    <div class="cloth-items-row">
+                        <div class="cloth-item-card">
+                            <div class="cloth-img">🩳</div>
+                            Shorts
+                        </div>
+                        <div class="cloth-item-card">
+                            <div class="cloth-img">👗</div>
+                            Frock
+                        </div>
+                        <div class="cloth-item-card">
+                            <div class="cloth-img">👕</div>
+                            T-Shirt
+                        </div>
+                        <div class="cloth-item-card">
+                            <div class="cloth-img">🧥</div>
+                            Jacket
+                        </div>
+                    </div>
+                    <button class="btn-addcart">Add to Cart 🛒</button>
+                </div>
+            </div>
+        </div>
+
+        
+        <div id="payment">
+            <h3>Payment</h3>
+            <div class="payment-wrap">
+                <div class="payment-card">
+                    <h2>Payment details</h2>
+
+                    <p class="pay-field-label"><b>Full Name</b></p>
+                    <input type="text" placeholder="Simanta kasaju">
+
+                    <p class="pay-field-label"><b>Email</b></p>
+                    <input type="email" placeholder="sim@example.com">
+
+                    <p class="pay-field-label"><b>Card Number</b></p>
+                    <input type="text" placeholder="1122334455" maxlength="16">
+
+                    <p class="pay-field-label"><b>Expiry date</b></p>
+                    <input type="date">
+
+                    <p class="pay-field-label"><b>CVV</b></p>
+                    <input type="text" placeholder="12345" maxlength="5">
+
+                    <div class="accepted-row">
+                        <p>Accepted</p>
+                        <span class="card-icons">💳 🏦</span>
+                    </div>
+
+                    <button class="btn-pay">pay</button>
+                </div>
+            </div>
+        </div>
 
     </div>
-</div>
 </body>
 </html>
