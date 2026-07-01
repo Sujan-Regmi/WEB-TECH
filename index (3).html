@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <title>My Portfolio</title>
+
+    <style>
+       body{
+background:linear-gradient(#f8fbff,#dfefff);
+}
+
+        nav{
+            background:blue;
+            padding:15px;
+            text-align:center;
+        }
+
+        nav{
+             background:linear-gradient(to right,#4facfe,#00f2fe);
+        }
+        section{
+            padding:30px;
+        }
+
+        h1,h2{
+            color:blue;
+        }
+
+        img{
+            width:200px;
+            height:200px;
+            border:2px solid black;
+        }
+        section img{
+width:180px;
+margin:10px;
+border-radius:10px;
+transition:.4s;
+}
+
+section img:hover{
+transform:scale(1.1);
+}
+
+        table{
+            width:100%;
+            border-collapse:collapse;
+            margin-top:20px;
+        }
+
+        table,th,td{
+            border:1px solid black;
+        }
+
+        th,td{
+            padding:10px;
+            text-align:center;
+        }
+
+        input,textarea{
+            width:100%;
+            padding:8px;
+            margin-top:5px;
+            margin-bottom:15px;
+        }
+
+        button{
+            background:blue;
+            color:white;
+            border:none;
+            padding:10px 20px;
+        }
+
+        .box{
+            background:white;
+            padding:20px;
+            margin-top:20px;
+            border:1px solid gray;
+        }
+        .education {
+    margin-top: 20px;
+}
+
+.edu-item {
+    background: #f4f4f4;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-left: 5px solid #007BFF;
+    border-radius: 5px;
+}
+
+.edu-item h4 {
+    margin: 0 0 10px;
+    color: #007BFF;
+}
+
+.edu-item p {
+    margin: 5px 0;
+}
+    </style>
+
+</head>
+
+<body>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#resume">Resume</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+
+<section id="home">
+
+<h1>Welcome To My Portfolio</h1>
+
+<img src="image.jpg" alt="Profile">
+
+<p>
+Hello! My name is <b>Sujan Regmi</b>.
+I am a Computer Science student.
+I enjoy learning HTML, CSS and Python.
+</p>
+
+<p>
+This website is created using only HTML and CSS.
+</p>
+
+<a href="#contact">
+<button>Contact Me</button>
+</a>
+
+</section>
+
+<hr>
+
+<section id="about">
+
+<h2>About Me</h2>
+
+<div class="box">
+
+<p>
+I am interested in Web Development and Programming.
+I like creating simple websites and learning new technologies.
+</p>
+<section>
+
+<h2>Testimonials</h2>
+
+<div class="box">
+
+<p>"Sujan is hardworking and eager to learn."</p>
+
+<b>- Friend</b>
+
+</div>
+
+<div class="box">
+
+<p>"Excellent beginner in Web Development."</p>
+
+<b>- Teacher</b>
+
+</div>
+
+</section>
+<h3>Skills</h3>
+
+HTML
+<progress value="90" max="100"></progress>
+
+CSS
+<progress value="85" max="100"></progress>
+
+Python
+<progress value="80" max="100"></progress>
+
+C
+<progress value="70" max="100"></progress>
+<h2>Skill Table</h2>
+
+<table>
+
+<tr>
+<th>Skill</th>
+<th>Level</th>
+</tr>
+
+<tr>
+<td>HTML</td>
+<td>Advanced</td>
+</tr>
+
+<tr>
+<td>CSS</td>
+<td>Intermediate</td>
+</tr>
+
+<tr>
+<td>Python</td>
+<td>Intermediate</td>
+</tr>
+
+<tr>
+<td>C</td>
+<td>Beginner</td>
+</tr>
+
+</table>
+
+<h3>Audio</h3>
+
+<audio controls>
+<source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+</audio>
+<h2>My Video</h2>
+<iframe src="" frameborder="0"></iframe>
+<video controls width="500">
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bP8ATWCvqzw?si=5jnjO2AbfLwJB5Us" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+
+</video>
+</div>
+
+</section>  
+
+<hr>
+
+<section id="projects">
+
+<h2>My Projects</h2>
+
+<div class="box">
+
+<h3>Project 1</h3>
+
+<img src="https://codewithrandom.com/wp-content/uploads/2022/08/glass-morphism-1024x699.jpg" alt="Web image description">
+
+
+<p>Simple Portfolio Website using HTML and CSS.</p>
+
+</div>
+
+<div class="box">
+
+<h3>Project 2</h3>
+
+<img src="https://d8it4huxumps7.cloudfront.net/uploads/images/65e05c68b7f3e_calculator_program_in_python_01.jpg?d=2000x2000" alt="Project">
+
+<p>Calculator using python.</p>
+
+</div>
+
+</section>
+
+<hr>
+
+
+<section id="resume">
+
+    <h2>My Resume</h2>
+
+    <div class="box">
+
+        <h3>Education</h3>
+
+        <div class="education">
+
+            <div class="edu-item">
+                <h4>SEE</h4>
+                <p><strong>School:</strong> Horizon School</p>
+                <p><strong>Year:</strong> 2018</p>
+            </div>
+
+            <div class="edu-item">
+                <h4>+2 (Higher Secondary)</h4>
+                <p><strong>College:</strong> Tilottama Campus</p>
+                <p><strong>Year:</strong> 2022</p>
+            </div>
+
+            <div class="edu-item">
+                <h4>Bachelor in Computer Engineering</h4>
+                <p><strong>College:</strong> NCIT</p>
+                <p><strong>Status:</strong> Running</p>
+            </div>
+
+        </div>
+
+        <h3>Skills</h3>
+        <p>HTML, CSS, C Programming, Python, MySQL, Git, GitHub</p>
+
+        <h3>Info</h3>
+        <p>
+            Passionate Computer Engineering student interested in web development,
+            programming, and problem-solving. Looking to improve my technical skills
+            by building practical projects and learning modern technologies.
+        </p>
+
+    </div>
+
+</section>
+<br>
+
+<h3>Experience</h3>
+
+<p>Beginner friendly.</p>
+
+</div>
+
+</section>
+
+<hr>
+
+
+
+<section id="contact">
+
+    <h2>Contact Me</h2>
+
+    <div class="box">
+
+        <form>
+
+            <label>Name</label><br>
+            <input type="text" placeholder="Enter your name"><br><br>
+
+            <label>Email</label><br>
+            <input type="email" placeholder="Enter your email"><br><br>
+            <label>Phone Number:</label><br>
+            <input type="number" placeholder="Enter your mobile number"><br><br>
+
+            <label>Message</label><br>
+            <textarea rows="5" placeholder="Write your message"></textarea><br><br>
+
+            <button type="submit">Send</button>
+
+        </form>
+
+        <hr>
+
+        <h3>Contact Information</h3>
+
+        <p><strong>Email:</strong> sujan@gmail.com</p>
+        <p><strong>Phone:</strong> +977-9864402690</p>
+        <p><strong>GitHub:</strong>
+            <a href="https://github.com/Sujan-Regmi" target="_blank">
+                github.com/Sujan-Regmi
+            </a>
+        </p>
+
+        <p><strong>LinkedIn:</strong>
+            <a href="https://www.linkedin.com/in/Sujan Regmi/" target="_blank">
+                linkedin.com/in/Sujan Regmi
+            </a>
+        </p>
+    </div>
+
+</section>
+<hr>
+
+<section>
+
+<h2>Login Form</h2>
+
+<div class="box">
+
+<form>
+
+<label>Username</label><br>
+<input type="text" placeholder="Enter username">
+
+<label>Password</label><br>
+<input type="password" placeholder="Enter password">
+
+<button type="submit">Login</button>
+
+</form>
+
+</div>
+
+</section>
+
+<hr>
+
+<section>
+
+<h2>My Location</h2>
+
+<iframe
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39886.43446287126!2d83.40323615152346!3d27.917434750712147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39967af6efd19e4d%3A0x920ee965a1557807!2sArgali!5e0!3m2!1sen!2snp!4v1782878409639!5m2!1sen!2snp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+</iframe>
+</section>
+
+<hr>
+
+
+<footer style="background:blue;color:white;text-align:center;padding:15px;">
+<p>Sujan Regmi | My Portfolio</p>
+</footer>
+
+</body>
+</html>
